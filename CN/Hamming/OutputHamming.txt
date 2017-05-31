@@ -1,0 +1,30 @@
+Output:
+Enter the number of bits for the Hamming data:
+7
+Enter bit no. 7:
+1
+Enter bit no. 6:
+0
+Enter bit no. 5:
+1
+Enter bit no. 4:
+0
+Enter bit no. 3:
+1
+Enter bit no. 2:
+0
+Enter bit no. 1:
+1
+You entered:
+1010101
+Generated code is:
+10100101111
+Enter position of a bit to alter to check for error detection at the receiver end (0 for no error):
+5
+Sent code is:
+10100111111
+Error is at location 5.
+Corrected code is:
+10100101111
+Original data sent was:
+1010101

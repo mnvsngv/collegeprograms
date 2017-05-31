@@ -1,0 +1,88 @@
+Output:
+Enter the size of the data:
+7
+Enter the data, bit by bit:
+Enter bit number 7:
+1
+Enter bit number 6:
+0
+Enter bit number 5:
+0
+Enter bit number 4:
+1
+Enter bit number 3:
+1
+Enter bit number 2:
+0
+Enter bit number 1:
+1
+Enter the size of the divisor:
+4
+Enter the divisor, bit by bit:
+Enter bit number 4:
+1
+Enter bit number 3:
+0
+Enter bit number 2:
+1
+Enter bit number 1:
+1
+1.) First data bit is : 1
+Remainder : 0101
+2.) First data bit is : 0
+Remainder : 1010
+3.) First data bit is : 1
+Remainder : 0011
+4.) First data bit is : 0
+Remainder : 0110
+5.) First data bit is : 0
+Remainder : 1100
+6.) First data bit is : 1
+Remainder : 1110
+7.) First data bit is : 1
+Remainder : 1010
+101
+The CRC code generated is:
+1001101101
+Enter the data to be sent:
+Enter bit number 10:
+1
+Enter bit number 9:
+0
+Enter bit number 8:
+0
+Enter bit number 7:
+1
+Enter bit number 6:
+1
+Enter bit number 5:
+0
+Enter bit number 4:
+1
+Enter bit number 3:
+1
+Enter bit number 2:
+0
+Enter bit number 1:
+1
+1.) First data bit is : 1
+Remainder : 0101
+2.) First data bit is : 0
+Remainder : 1010
+3.) First data bit is : 1
+Remainder : 0011
+4.) First data bit is : 0
+Remainder : 0111
+5.) First data bit is : 0
+Remainder : 1110
+6.) First data bit is : 1
+Remainder : 1011
+7.) First data bit is : 1
+Remainder : 0000
+8.) First data bit is : 0
+Remainder : 0000
+9.) First data bit is : 0
+Remainder : 0000
+10.) First data bit is : 0
+Remainder : 0000
+Data was received without any error.

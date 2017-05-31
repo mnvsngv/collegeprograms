@@ -1,0 +1,41 @@
+task compileCRC(type: JavaCompile) {
+	String directory = 'Hamming'
+	destinationDir = file('build/' + directory)
+	source = fileTree(dir: './' + directory, include: '**/*.java')
+	classpath = files('./' + directory)
+}
+
+task executeCRC(type: JavaExec, dependsOn: 'compileCRC') {
+	String directory = 'CRC'
+	standardInput = System.in
+	classpath = files('build/' + directory)
+	main = "CRC"
+}
+
+task compileHamming(type: JavaCompile) {
+	String directory = 'Hamming'
+	destinationDir = file('build/' + directory)
+	source = fileTree(dir: './' + directory, include: '**/*.java')
+	classpath = files('./' + directory)
+}
+
+task executeHamming(type: JavaExec, dependsOn: 'compileHamming') {
+	String directory = 'Hamming'
+	standardInput = System.in
+	classpath = files('build/' + directory)
+	main = "Hamming"
+}
+
+task compileInternetChecksum(type: JavaCompile) {
+	String directory = 'Internet Checksum'
+	destinationDir = file('build/' + directory)
+	source = fileTree(dir: './' + directory, include: '**/*.java')
+	classpath = files('./' + directory)
+}
+
+task executeInternetChecksum(type: JavaExec, dependsOn: 'compileInternetChecksum') {
+	String directory = 'Internet Checksum'
+	standardInput = System.in
+	classpath = files('build/' + directory)
+	main = "InternetChecksum"
+}

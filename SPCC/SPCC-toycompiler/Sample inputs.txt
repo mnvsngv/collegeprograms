@@ -1,0 +1,18 @@
+int x = (9a/10.0)+(b/10.0);
+
+{ int a,b }
+float x = (a/10.0)+(b/10);
+
+{ float a,b }
+float x = (a/10.0)+(b/10);
+
+{ int s }
+int x = s;
+
+{ int a,b }
+int x = (a/10.0)+(b/10);
+
+{ float a,b }
+int x = (a/10.0)+(b/10);
+
+int x = (a/+-*10.0)+(b/10.0);

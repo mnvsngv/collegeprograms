@@ -1,0 +1,18 @@
+Output:
+Enter the string input:
+AbCdEFG
+Ab : 4162
+Cd : 4364
+EF : 4546
+G : 0047
+The checksum generated is = 35ac
+Enter the data to be sent:
+AbCdEFG
+Enter the checksum to be sent:
+35ac
+Ab : 4162
+Cd : 4364
+EF : 4546
+G : 0047
+Syndrome = 0
+Data is received without error.
