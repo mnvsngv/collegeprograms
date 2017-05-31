@@ -26,7 +26,7 @@ task executeOTPClient(type: JavaExec, dependsOn: 'compileOTPAdvanced') {
 	main = "OTPClient"
 }
 
-task executeOTPServer(type: JavaExec) {
+task executeOTPServer(type: JavaExec, dependsOn: 'compileOTPAdvanced') {
 	String directory = 'OTPClientServer'
 	standardInput = System.in
 	classpath = files('build/' + directory)
