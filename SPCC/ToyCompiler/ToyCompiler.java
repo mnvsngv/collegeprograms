@@ -1,8 +1,3 @@
-/*
- 	Program to construct Toy Compiler
- 	Author: Manav Sanghavi		Author Link: https://www.facebook.com/manav.sanghavi 
-	www.pracspedia.com 
-*/
 import java.util.*;
 import java.util.regex.*;
 import java.io.*;

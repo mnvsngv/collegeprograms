@@ -1,0 +1,175 @@
+// TWO PASS ASSEMBLER
+
+task copyTwoPassAssemblerInputFiles(type: Copy) {
+	String directory = 'TwoPassAssembler'
+    from directory
+    into 'build/' + directory
+    include '**/*.txt'
+    exclude '**/*.java'
+}
+
+task compileTwoPassAssembler(type: JavaCompile, dependsOn: 'copyTwoPassAssemblerInputFiles') {
+	String directory = 'TwoPassAssembler'
+	destinationDir = file('build/' + directory)
+	source = fileTree(dir: './' + directory, include: '**/*.java')
+	classpath = files('./' + directory)
+}
+
+task executeTwoPassAssembler(type: JavaExec, dependsOn: 'compileTwoPassAssembler') {
+	String directory = 'TwoPassAssembler'
+	standardInput = System.in
+	classpath = files('build/' + directory)
+	workingDir = 'build/' + directory
+	main = "TwoPassAssembler"
+}
+
+// MACRO PROCESSOR
+
+task copyMacroProcessorInputFiles(type: Copy) {
+	String directory = 'MacroProcessor'
+    from directory
+    into 'build/' + directory
+    include '**/*.txt'
+    exclude '**/*.java'
+}
+
+task compileMacroProcessor(type: JavaCompile, dependsOn: 'copyMacroProcessorInputFiles') {
+	String directory = 'MacroProcessor'
+	destinationDir = file('build/' + directory)
+	source = fileTree(dir: './' + directory, include: '**/*.java')
+	classpath = files('./' + directory)
+}
+
+task executeMacroProcessor(type: JavaExec, dependsOn: 'compileMacroProcessor') {
+	String directory = 'MacroProcessor'
+	standardInput = System.in
+	classpath = files('build/' + directory)
+	workingDir = 'build/' + directory
+	main = "MacroProcessor"
+}
+
+// CODE GENERATION
+
+task compileCodeGeneration(type: JavaCompile) {
+	String directory = 'CodeGeneration'
+	destinationDir = file('build/' + directory)
+	source = fileTree(dir: './' + directory, include: '**/*.java')
+	classpath = files('./' + directory)
+}
+
+task executeCodeGeneration(type: JavaExec, dependsOn: 'compileCodeGeneration') {
+	String directory = 'CodeGeneration'
+	standardInput = System.in
+	classpath = files('build/' + directory)
+	workingDir = 'build/' + directory
+	main = "CodeGeneration"
+}
+
+// LEXICAL ANALYZER
+
+task copyLexicalAnalyzerInputFiles(type: Copy) {
+	String directory = 'LexicalAnalyzer'
+    from directory
+    into 'build/' + directory
+    include '**/*.txt'
+    exclude '**/*.java'
+}
+
+task compileLexicalAnalyzer(type: JavaCompile, dependsOn: 'copyLexicalAnalyzerInputFiles') {
+	String directory = 'LexicalAnalyzer'
+	destinationDir = file('build/' + directory)
+	source = fileTree(dir: './' + directory, include: '**/*.java')
+	classpath = files('./' + directory)
+}
+
+task executeLexicalAnalyzer(type: JavaExec, dependsOn: 'compileLexicalAnalyzer') {
+	String directory = 'LexicalAnalyzer'
+	standardInput = System.in
+	classpath = files('build/' + directory)
+	workingDir = 'build/' + directory
+	main = "LexicalAnalyzer"
+	doLast {
+		println("\n\n--- INPUT ---")
+		println(new File(workingDir.toString() + '/input.txt').text)
+		println("=== OUTPUT ===")
+		println(new File(workingDir.toString() + '/output.txt').text)
+	}
+}
+
+// RECURSIVE DESCENT PARSER
+
+task compileRecursiveDescentParser(type: JavaCompile) {
+	String directory = 'RecursiveDescentParser'
+	destinationDir = file('build/' + directory)
+	source = fileTree(dir: './' + directory, include: '**/*.java')
+	classpath = files('./' + directory)
+}
+
+task executeRecursiveDescentParser(type: JavaExec, dependsOn: 'compileRecursiveDescentParser') {
+	String directory = 'RecursiveDescentParser'
+	standardInput = System.in
+	classpath = files('build/' + directory)
+	workingDir = 'build/' + directory
+	main = "RecursiveDescentParser"
+}
+
+// LOOP OPTIMIZATION
+
+task copyLoopOptimizationInputFiles(type: Copy) {
+	String directory = 'LoopOptimization'
+    from directory
+    into 'build/' + directory
+    include '*.txt'
+    exclude '**/*.java'
+}
+
+task compileLoopOptimization(type: JavaCompile, dependsOn:'copyLoopOptimizationInputFiles') {
+	String directory = 'LoopOptimization'
+	destinationDir = file('build/' + directory)
+	source = fileTree(dir: './' + directory, include: '**/*.java')
+	classpath = files('./' + directory)
+}
+
+task executeLoopOptimization(type: JavaExec, dependsOn: 'compileLoopOptimization') {
+	String directory = 'LoopOptimization'
+	standardInput = System.in
+	classpath = files('build/' + directory)
+	workingDir = 'build/' + directory
+	main = "LoopOptimization"
+	doLast {
+		println("\n\n--- INPUT ---")
+		println(new File(workingDir.toString() + '/input.txt').text)
+		println("\n=== OUTPUT ===")
+		println(new File(workingDir.toString() + '/output.txt').text)
+	}
+}
+
+// TOY COMPILER
+
+task copyToyCompilerInputFiles(type: Copy) {
+	String directory = 'ToyCompiler'
+    from directory
+    into 'build/' + directory
+    include 'input.txt'
+    exclude '**/*.java'
+}
+
+task compileToyCompiler(type: JavaCompile, dependsOn:'copyToyCompilerInputFiles') {
+	String directory = 'ToyCompiler'
+	destinationDir = file('build/' + directory)
+	source = fileTree(dir: './' + directory, include: '**/*.java')
+	classpath = files('./' + directory)
+}
+
+task executeToyCompiler(type: JavaExec, dependsOn: 'compileToyCompiler') {
+	String directory = 'ToyCompiler'
+	standardInput = System.in
+	classpath = files('build/' + directory)
+	workingDir = 'build/' + directory
+	main = "ToyCompiler"
+	doFirst {
+		println("\n\n--- INPUT ---")
+		println(new File(workingDir.toString() + '/input.txt').text)
+		println("\n=== OUTPUT ===")
+	}
+}

@@ -1,10 +1,3 @@
-/*
-	Implementing Basic One Time Password Authentication Mechanisms using Client-Server model in Java
-	Server Program
-	Author: Manav Sanghavi		Author Link: https://www.facebook.com/manav.sanghavi
-	www.pracspedia.com
-*/
-
 import java.util.*;
 import java.io.*;
 import java.net.*;

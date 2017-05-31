@@ -1,8 +1,4 @@
 /*
-	Program to implement Recursive Descent Parser in Java
-	Author: Manav Sanghavi		Author Link: https://www.facebook.com/manav.sanghavi 
-	www.pracspedia.com
-	
 	Grammar:
 	E -> x + T
 	T -> (E)
@@ -77,7 +73,6 @@ class RecursiveDescentParser {
 
 /*
 	Sample Inputs:
-	- xxx: invalid
 	- x+x+x: invalid
 	- x+(x+x): valid
 	- x+(x+(x+x)): valid

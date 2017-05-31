@@ -1,9 +1,3 @@
-/*
-	Implementing Basic One Time Password Authentication Mechanisms in Java
-	Author: Manav Sanghavi		Author Link: https://www.facebook.com/manav.sanghavi
-	www.pracspedia.com
-*/
-
 import java.util.*;
 
 class TimeOutTask extends TimerTask {

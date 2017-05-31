@@ -1,8 +1,3 @@
-/*
-	Program to implement Hamming Error Correction Code in Java
-	Author: Manav Sanghavi		Author Link: https://www.facebook.com/manav.sanghavi
-	www.pracspedia.com
-*/
 import java.util.*;
 
 class Hamming {

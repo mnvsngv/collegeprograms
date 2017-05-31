@@ -1,8 +1,3 @@
-/*
-	Program to implement 2 Pass Macro Assembler in Java
-	Author: Manav Sanghavi		Author Link: https://www.facebook.com/manav.sanghavi
-	www.pracspedia.com
-*/
 import java.util.*;
 import java.io.*;
 
