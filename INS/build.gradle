@@ -1,0 +1,34 @@
+task compileOTP(type: JavaCompile) {
+	String directory = 'OTP'
+	destinationDir = file('build/' + directory)
+	source = fileTree(dir: './' + directory, include: '**/*.java')
+	classpath = files('./' + directory)
+}
+
+task executeOTP(type: JavaExec, dependsOn: 'compileOTP') {
+	String directory = 'OTP'
+	standardInput = System.in
+	classpath = files('build/' + directory)
+	main = "BasicOTP"
+}
+
+task compileOTPAdvanced(type: JavaCompile) {
+	String directory = 'OTPClientServer'
+	destinationDir = file('build/' + directory)
+	source = fileTree(dir: './' + directory, include: '**/*.java')
+	classpath = files('./' + directory)
+}
+
+task executeOTPClient(type: JavaExec, dependsOn: 'compileOTPAdvanced') {
+	String directory = 'OTPClientServer'
+	standardInput = System.in
+	classpath = files('build/' + directory)
+	main = "OTPClient"
+}
+
+task executeOTPServer(type: JavaExec) {
+	String directory = 'OTPClientServer'
+	standardInput = System.in
+	classpath = files('build/' + directory)
+	main = "OTPServer"
+}
