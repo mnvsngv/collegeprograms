@@ -19,14 +19,14 @@ Sample Input:
 ## Loop Optimization
 `gradlew --quiet SPCC:executeLoopOptimization`
 
-Input is taken from [input.txt](SPCC/LoopOptimization/input.txt).
-For more input samples, check out the [Loop Optimization input samples](SPCC/LoopOptimization/Sample Inputs).
+Input is taken from [input.txt](LoopOptimization/input.txt).
+For more input samples, check out the [Loop Optimization input samples](LoopOptimization/Sample Inputs).
 
 ## Toy Compiler
 `gradlew --quiet SPCC:executeToyCompiler`
 
-Input is taken from [input.txt](SPCC/ToyCompiler/input.txt).
-For more input samples, check out the [Toy Compiler input samples](SPCC/ToyCompiler/Sample inputs.txt).
+Input is taken from [input.txt](ToyCompiler/input.txt).
+For more input samples, check out the [Toy Compiler input samples](ToyCompiler/Sample inputs.txt).
 
 ## Two Pass Assembler
 `gradlew --quiet SPCC:executeTwoPassAssembler`
