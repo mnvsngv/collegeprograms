@@ -23,7 +23,7 @@ Sample Input:
 Input is taken from [input.txt](LoopOptimization/input.txt).
 
 ### Samples
-For more input samples, check out the [samples](LoopOptimization/Sample Inputs).
+For more input samples, check out the [samples](LoopOptimization/Sample%20Inputs).
 
 ## Toy Compiler
 `gradlew --quiet SPCC:executeToyCompiler`
@@ -32,7 +32,7 @@ For more input samples, check out the [samples](LoopOptimization/Sample Inputs).
 Input is taken from [input.txt](ToyCompiler/input.txt).
 
 ### Samples
-For more input samples, check out the [samples](ToyCompiler/Sample inputs.txt).
+For more input samples, check out the [samples](ToyCompiler/Sample%20inputs.txt).
 
 ## Two Pass Assembler
 `gradlew --quiet SPCC:executeTwoPassAssembler`
