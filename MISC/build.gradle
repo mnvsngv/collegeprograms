@@ -1,0 +1,85 @@
+// Attendance Calculator
+
+task compileAttendanceCalculator(type: JavaCompile) {
+	String directory = 'Attendance Calculator'
+	destinationDir = file('build/' + directory)
+	source = fileTree(dir: './' + directory, include: '**/*.java')
+	classpath = files('./' + directory)
+}
+
+task executeAttendanceCalculator(type: JavaExec, dependsOn: 'compileAttendanceCalculator') {
+	String directory = 'Attendance Calculator'
+	standardInput = System.in
+	classpath = files('build/' + directory)
+	main = "AttendanceCalculator"
+}
+
+// Chat Room
+
+task compileChatRoom(type: JavaCompile) {
+	String directory = 'Chat Room'
+	destinationDir = file('build/' + directory)
+	source = fileTree(dir: './' + directory, include: '**/*.java')
+	classpath = files('./' + directory)
+}
+
+task executeChatRoomClient(type: JavaExec, dependsOn: 'compileChatRoom') {
+	String directory = 'Chat Room'
+	standardInput = System.in
+	classpath = files('build/' + directory)
+	main = "client.Client"
+}
+
+task executeChatRoomServer(type: JavaExec, dependsOn: 'compileChatRoom') {
+	String directory = 'Chat Room'
+	standardInput = System.in
+	classpath = files('build/' + directory)
+	main = "server.Server"
+}
+
+// Group Communication
+
+task compileGroupCommunication(type: JavaCompile) {
+	String directory = 'Group Communication'
+	destinationDir = file('build/' + directory)
+	source = fileTree(dir: './' + directory, include: '**/*.java')
+	classpath = files('./' + directory)
+}
+
+task executeGroupCommunicationAdmin(type: JavaExec, dependsOn: 'compileGroupCommunication') {
+	String directory = 'Group Communication'
+	standardInput = System.in
+	classpath = files('build/' + directory)
+	main = "Admin"
+}
+
+task executeGroupCommunicationUser(type: JavaExec, dependsOn: 'compileGroupCommunication') {
+	String directory = 'Group Communication'
+	standardInput = System.in
+	classpath = files('build/' + directory)
+	main = "User"
+}
+
+// Database GUI
+
+task copyDriver(type: Copy) {
+	String directory = 'Database GUI'
+    from directory
+    into 'build/' + directory
+    include 'postgresql.jar'
+    exclude '**/*.java'
+}
+
+task compileDatabaseGUI(type: JavaCompile, dependsOn: 'copyDriver') {
+	String directory = 'Database GUI'
+	destinationDir = file('build/' + directory)
+	source = fileTree(dir: './' + directory, include: '**/*.java')
+	classpath = files('./' + directory)
+}
+
+task executeDatabaseGUI(type: JavaExec, dependsOn: 'compileDatabaseGUI') {
+	String directory = 'Database GUI'
+	standardInput = System.in
+	classpath = files('build/' + directory, 'build/' + directory + '/postgresql.jar')
+	main = "DatabaseGUI"
+}
