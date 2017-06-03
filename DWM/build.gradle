@@ -1,0 +1,43 @@
+task copyDriverApriori(type: Copy) {
+	String directory = 'Apriori'
+    from directory
+    into 'build/' + directory
+    include 'postgresql.jar'
+    exclude '**/*.java'
+}
+
+task compileApriori(type: JavaCompile, dependsOn: 'copyDriverApriori') {
+	String directory = 'Apriori'
+	destinationDir = file('build/' + directory)
+	source = fileTree(dir: './' + directory, include: '**/*.java')
+	classpath = files('./' + directory)
+}
+
+task executeApriori(type: JavaExec, dependsOn: 'compileApriori') {
+	String directory = 'Apriori'
+	standardInput = System.in
+	classpath = files('build/' + directory, 'build/' + directory + '/postgresql.jar')
+	main = "Apriori"
+}
+
+task copyDriverKMeans(type: Copy) {
+	String directory = 'K-Means Clustering'
+    from directory
+    into 'build/' + directory
+    include 'postgresql.jar'
+    exclude '**/*.java'
+}
+
+task compileKMeans(type: JavaCompile, dependsOn: 'copyDriverKMeans') {
+	String directory = 'K-Means Clustering'
+	destinationDir = file('build/' + directory)
+	source = fileTree(dir: './' + directory, include: '**/*.java')
+	classpath = files('./' + directory)
+}
+
+task executeKMeans(type: JavaExec, dependsOn: 'compileKMeans') {
+	String directory = 'K-Means Clustering'
+	standardInput = System.in
+	classpath = files('build/' + directory, 'build/' + directory + '/postgresql.jar')
+	main = "KMeansDatabase"
+}

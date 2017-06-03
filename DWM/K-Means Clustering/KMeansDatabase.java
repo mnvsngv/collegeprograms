@@ -1,13 +1,3 @@
-/*
-	Program for K-Means Clustering using Postgres Database in Java
-	Author: Manav Sanghavi	Author Link: https://www.facebook.com/manav.sanghavi
-	www.pracspedia.com
-	
-	To run the file:
-	javac -classpath postgresql.jar KMeansDatabase.java
-	java -classpath postgresql.jar KMeansDatabase
-*/
-
 import java.util.*;
 import java.sql.*;
 

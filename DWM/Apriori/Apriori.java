@@ -1,8 +1,4 @@
 /*
-	Java implementation of the Apriori Algorithm
-	Author: Manav Sanghavi		Author Link: https://www.facebook.com/manav.sanghavi 
-	www.pracspedia.com
-
 	SQL Queries for database:
 	
 	CREATE TABLE apriori(transaction_id int, object int);
@@ -46,16 +42,26 @@ class Tuple {
 }
 
 class Apriori {
+    static String db;
+    static String user;
+    static String pass;
 	static Set<Tuple> c;
 	static Set<Tuple> l;
 	static int d[][];
 	static int min_support;
 	
 	public static void main(String args[]) throws Exception {
+        Scanner stringScan = new Scanner(System.in);
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter the Postgres database name:");
+        db = stringScan.nextLine();
+		System.out.println("Enter the username:");
+        user = stringScan.nextLine();
+		System.out.println("Enter the password:");
+        pass = stringScan.nextLine();
 		getDatabase();
 		c = new HashSet<>();
 		l = new HashSet<>();
-		Scanner scan = new Scanner(System.in);
 		int i, j, m, n;
 		System.out.println("Enter the minimum support (as an integer value):");
 		min_support = scan.nextInt();
@@ -180,8 +186,8 @@ class Apriori {
 	}
 	
 	static void getDatabase() throws Exception {
-		Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
-		Connection con = DriverManager.getConnection("jdbc:odbc:DWM");
+		Class.forName("org.postgresql.Driver");
+		Connection con = DriverManager.getConnection("jdbc:postgresql:" + db, user, pass);
 		Statement s = con.createStatement();
 		
 		ResultSet rs = s.executeQuery("SELECT * FROM apriori;");
@@ -218,8 +224,14 @@ class Apriori {
 
 OUTPUT:
 
-Enter the minimum support (as a floating point value, 0<x<1):
-0.5
+Enter the Postgres database name:
+postgres
+Enter the username:
+postgres
+Enter the password:
+
+Enter the minimum support (as an integer value):
+2
 Transaction Number: 1:
 Item number 1 = 1
 Item number 2 = 3
@@ -237,15 +249,15 @@ Transaction Number: 4:
 Item number 1 = 2
 Item number 2 = 5
 -+- L -+-
-[1] : 2
 [3] : 3
 [2] : 3
+[1] : 2
 [5] : 3
 -+- L -+-
+[2, 5] : 3
+[1, 3] : 2
 [2, 3] : 2
 [3, 5] : 2
-[1, 3] : 2
-[2, 5] : 3
 -+- L -+-
 [2, 3, 5] : 2
 

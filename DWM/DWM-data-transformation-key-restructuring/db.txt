@@ -1,5 +1,0 @@
-1, "Manav", "Sanghavi"
-2, "Tony", "Stark"
-3, "Steve", "Rogers"
-4, "Bruce", "Banner"
-5, "Nick", "Fury"

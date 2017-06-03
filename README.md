@@ -19,5 +19,6 @@ If you wish to see the download progress during that first time execution, ensur
 * DS => Data Structures
 * DWM => Data Warehousing and Mining
 * INS => Internet/Networking and Security
+* MISC => Miscellaneous Programs
 * MP => Microprocessors
 * SPCC => System Programming and Compiler Construction
