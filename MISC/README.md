@@ -29,4 +29,5 @@ In the Admin console, type "y" or "Y" to allow the requested user to join the gr
 Done!
 
 ## Database GUI
+**Note**: You'll need PostgreSQL installed on your machine.
 `gradlew --quiet MISC:executeDatabaseGUI`
