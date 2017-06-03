@@ -1,0 +1,27 @@
+task compilePrim(type: JavaCompile) {
+	String directory = "Prim's Algorithm"
+	destinationDir = file('build/' + directory)
+	source = fileTree(dir: './' + directory, include: '**/*.java')
+	classpath = files('./' + directory)
+}
+
+task executePrim(type: JavaExec, dependsOn: 'compilePrim') {
+	String directory = "Prim's Algorithm"
+	standardInput = System.in
+	classpath = files('build/' + directory)
+	main = "Prim"
+}
+
+task compileKruskal(type: JavaCompile) {
+	String directory = "Kruskal's Algorithm"
+	destinationDir = file('build/' + directory)
+	source = fileTree(dir: './' + directory, include: '**/*.java')
+	classpath = files('./' + directory)
+}
+
+task executeKruskal(type: JavaExec, dependsOn: 'compileKruskal') {
+	String directory = "Kruskal's Algorithm"
+	standardInput = System.in
+	classpath = files('build/' + directory)
+	main = "Kruskal"
+}

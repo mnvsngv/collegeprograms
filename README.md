@@ -16,6 +16,7 @@ If you wish to see the download progress during that first time execution, ensur
 
 ## Sections
 * CN => Computer Networking
+* DS => Data Structures
 * DWM => Data Warehousing and Mining
 * INS => Internet/Networking and Security
 * MP => Microprocessors

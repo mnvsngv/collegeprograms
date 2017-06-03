@@ -1,3 +1,5 @@
+// CRC
+
 task compileCRC(type: JavaCompile) {
 	String directory = 'Hamming'
 	destinationDir = file('build/' + directory)
@@ -11,6 +13,8 @@ task executeCRC(type: JavaExec, dependsOn: 'compileCRC') {
 	classpath = files('build/' + directory)
 	main = "CRC"
 }
+
+// Hamming
 
 task compileHamming(type: JavaCompile) {
 	String directory = 'Hamming'
@@ -26,6 +30,8 @@ task executeHamming(type: JavaExec, dependsOn: 'compileHamming') {
 	main = "Hamming"
 }
 
+// Internet Checksum
+
 task compileInternetChecksum(type: JavaCompile) {
 	String directory = 'Internet Checksum'
 	destinationDir = file('build/' + directory)
@@ -38,4 +44,50 @@ task executeInternetChecksum(type: JavaExec, dependsOn: 'compileInternetChecksum
 	standardInput = System.in
 	classpath = files('build/' + directory)
 	main = "InternetChecksum"
+}
+
+// Go Back N ARQ
+
+task compileGoBackNARQ(type: JavaCompile) {
+	String directory = 'Go Back N ARQ'
+	destinationDir = file('build/' + directory)
+	source = fileTree(dir: './' + directory, include: '**/*.java')
+	classpath = files('./' + directory)
+}
+
+task executeGoBackNARQReceiver(type: JavaExec, dependsOn: 'compileGoBackNARQ') {
+	String directory = 'Go Back N ARQ'
+	standardInput = System.in
+	classpath = files('build/' + directory)
+	main = "GoBackNReceiver"
+}
+
+task executeGoBackNARQSender(type: JavaExec, dependsOn: 'compileGoBackNARQ') {
+	String directory = 'Go Back N ARQ'
+	standardInput = System.in
+	classpath = files('build/' + directory)
+	main = "GoBackNSender"
+}
+
+// Selective Repeat ARQ
+
+task compileSelectiveRepeatARQ(type: JavaCompile) {
+	String directory = 'Selective Repeat ARQ'
+	destinationDir = file('build/' + directory)
+	source = fileTree(dir: './' + directory, include: '**/*.java')
+	classpath = files('./' + directory)
+}
+
+task executeSelectiveRepeatARQReceiver(type: JavaExec, dependsOn: 'compileSelectiveRepeatARQ') {
+	String directory = 'Selective Repeat ARQ'
+	standardInput = System.in
+	classpath = files('build/' + directory)
+	main = "SelectiveRepeatReceiver"
+}
+
+task executeSelectiveRepeatARQSender(type: JavaExec, dependsOn: 'compileSelectiveRepeatARQ') {
+	String directory = 'Selective Repeat ARQ'
+	standardInput = System.in
+	classpath = files('build/' + directory)
+	main = "SelectiveRepeatSender"
 }
